@@ -1,7 +1,11 @@
-export default function Page() {
+import ProjectList from "@/components/organism/ProjectList/ProjectList";
+
+export default function HomePage() {
     return (
         <>
-            <h1>hola</h1>
+            <section className="flex w-full h-full main-content">
+                <ProjectList />
+            </section>
         </>
     )
 }

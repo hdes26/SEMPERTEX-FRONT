@@ -1,10 +1,10 @@
 import React from 'react';
-import Img from 'next/image'
+import Img, { StaticImageData } from 'next/image'
 import PropTypes from 'prop-types';
 import './style.css';
 
 interface ImageProps {
-    src: string;
+    src: StaticImageData;
     alt: string;
     width: number;
     height: number;

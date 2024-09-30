@@ -4,12 +4,12 @@ import Title from '@/components/atoms/Title/Title';
 
 
 export const Nav = () => {
-    return (
-        <div className='nav'>
-            <Title text='Sempertex' />
-        </div>
+  return (
+    <nav className="navbar">
+      <Title text='Proyectos' />
+    </nav>
 
-    );
+  );
 };
 
 export default Nav;
