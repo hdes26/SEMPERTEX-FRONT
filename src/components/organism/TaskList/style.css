@@ -2,19 +2,18 @@
     display: flex;
     flex-direction: column;
     width: 25%;
-    height: 100%;
-    min-height: min-content;
+    min-height: 300px;
     padding: 2.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
     gap: 1rem;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #D4D4D4;
+    background-color: hsl(0, 0%, 83%);
     border-radius: 10px;
 }
 
-.task-list span:first-child {
+.task-list > span:first-child {
     font-weight: 600;
     font-size: 24px;
 }
@@ -26,8 +25,9 @@
     gap: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    max-height: 85%;
+    height: 100%;
     overflow-y: auto;
+
 }
 
 .task-list .task-container::-webkit-scrollbar {
@@ -41,4 +41,8 @@
 
 .task-list .task-container::-webkit-scrollbar-thumb:hover {
     background-color: #555;
+}
+
+.task-list .button-label span {
+    text-align: center;
 }

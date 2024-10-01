@@ -7,9 +7,9 @@ export default function HomeLayout({
   children: React.ReactNode
 }) {
   return (
-    <main className="flex w-full h-full">
+    <main className="flex w-full h-screen">
       <Sidebar />
-      <div className="content-container flex flex-col w-full">
+      <div className="content-container flex flex-col w-full h-full">
         <Nav />
         {children}
       </div>

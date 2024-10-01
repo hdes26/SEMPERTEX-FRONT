@@ -1,0 +1,11 @@
+.add-task{
+padding-top: 10px;
+}
+
+.add-task .label {
+    font-size: 15px;
+    color: gray;
+}
+.add-task .label:hover {
+    color: rgb(86, 85, 85);
+}
