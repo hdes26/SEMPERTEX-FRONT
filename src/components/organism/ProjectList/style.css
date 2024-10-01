@@ -1,0 +1,12 @@
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 10rem;
+    min-height: min-content;
+    padding: 2.5rem;
+    gap: 1.25rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}

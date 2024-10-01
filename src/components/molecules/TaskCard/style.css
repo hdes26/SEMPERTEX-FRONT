@@ -1,0 +1,23 @@
+.task-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 8px;
+    font-weight: 450;
+    cursor: pointer;
+}
+
+.task-card > span:first-child  {
+    height: 5px;
+    min-width: 30%;
+    max-width: 30%;
+    background-color: #59ff00;
+}
+
+.task-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}

@@ -3,7 +3,7 @@ import ProjectList from "@/components/organism/ProjectList/ProjectList";
 export default function HomePage() {
     return (
         <>
-            <section className="flex w-full h-full main-content">
+            <section className="main-content flex w-full h-full">
                 <ProjectList />
             </section>
         </>
