@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 import TaskCard from '@/components/molecules/TaskCard/TaskCard';

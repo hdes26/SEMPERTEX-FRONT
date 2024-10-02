@@ -1,9 +1,8 @@
 'use client';
 import TaskList from "@/components/organism/TaskList/TaskList";
-import { addMultipleTasks } from "@/redux/features/taskListSlice";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import useInitializeTasks from "@/hooks/useInitializeTasks";
 import { TaskType } from "@/types/Task";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 type ProjectPageProps = {
     params: {
@@ -13,8 +12,6 @@ type ProjectPageProps = {
 
 export default function ProjectPage({ params }: ProjectPageProps) {
     const { id } = params;
-    const tasksFromStore = useAppSelector((state) => state.taskListReducer.tasks);
-    const dispatch = useAppDispatch();
 
     const [taskCards, setTaskCards] = useState<TaskType[]>([
         { id: 1, name: 'Tarea de Hernan', status: 'todo' },
@@ -22,14 +19,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         { id: 3, name: 'Tarea de Hernan', status: 'completed' }
     ]);
 
-    const hasDispatched = useRef(false);
+    useInitializeTasks(taskCards);
 
-    useEffect(() => {
-        if (tasksFromStore.length === 0 && !hasDispatched.current) {
-            dispatch(addMultipleTasks(taskCards));
-            hasDispatched.current = true;
-        }
-    }, [dispatch, tasksFromStore.length, taskCards]);
 
     return (
         <>
