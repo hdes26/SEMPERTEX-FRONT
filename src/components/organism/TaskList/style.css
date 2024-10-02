@@ -1,8 +1,10 @@
-.task-list {
+.task-list.todo {
     display: flex;
     flex-direction: column;
     width: 25%;
     min-height: 300px;
+    height: min-content;
+    max-height: 85vh;
     padding: 2.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -12,6 +14,40 @@
     background-color: hsl(0, 0%, 83%);
     border-radius: 10px;
 }
+.task-list.inprogress {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-height: 300px;
+    height: min-content;
+    max-height: 85vh;
+    padding: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: hsl(0, 0%, 83%);
+    border-radius: 10px;
+}
+
+.task-list.completed {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-height: 300px;
+    height: min-content;
+    max-height: 85vh;
+    padding: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: hsl(0, 0%, 83%);
+    border-radius: 10px;
+}
+
 
 .task-list > span:first-child {
     font-weight: 600;

@@ -34,6 +34,6 @@ TaskCard.propTypes = {
         PropTypes.number,
     ]).isRequired,
     name: PropTypes.string.isRequired,
+    status: PropTypes.oneOf(['todo', 'inprogress', 'completed']).isRequired,
 };
-
 export default TaskCard;

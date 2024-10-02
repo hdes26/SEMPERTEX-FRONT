@@ -1,5 +1,8 @@
+'use client'
 import Nav from "@/components/organism/Nav/Nav"
 import Sidebar from "@/components/organism/Sidebar/Sidebar"
+import { store } from "@/redux/store"
+import { Provider } from "react-redux"
 
 export default function HomeLayout({
   children
@@ -11,7 +14,9 @@ export default function HomeLayout({
       <Sidebar />
       <div className="content-container flex flex-col w-full h-full">
         <Nav />
-        {children}
+        <Provider store={store}>
+          {children}
+        </Provider>
       </div>
     </main>
   )
