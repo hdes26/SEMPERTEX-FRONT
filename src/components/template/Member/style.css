@@ -1,0 +1,11 @@
+.member-content{
+
+}
+.member-content button {
+    padding: 10px;
+    align-self: flex-end;
+}
+
+.member-content button:hover {
+    font-weight: 500;
+}

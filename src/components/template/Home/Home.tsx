@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import ProjectList from '../../organism/ProjectsList/ProjectsList';
-import AddProjectButton from '@/components/molecules/addProjectButton/AddProjectButton';
+import AddProjectButton from '@/components/molecules/AddProjectButton/AddProjectButton';
 
 
 export const Home = () => {

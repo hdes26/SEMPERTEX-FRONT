@@ -1,0 +1,11 @@
+.add-member{
+padding-top: 10px;
+}
+
+.add-member .label {
+    font-size: 15px;
+    color: gray;
+}
+.add-member .label:hover {
+    color: rgb(86, 85, 85);
+}

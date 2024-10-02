@@ -1,0 +1,25 @@
+.add-member-card {
+    flex: 1 1 15%; 
+    min-width: 23%;
+    max-width: 23%;
+    height: 9rem;
+    background-color: rgb(0, 121, 191);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.add-task-project input {
+    font-size: 12px;
+}
+
+.add-member-card .label{
+    color: white;
+}
+
+.add-member-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}

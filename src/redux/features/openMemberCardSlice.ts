@@ -4,8 +4,8 @@ const initialState = {
   active: false,
 };
 
-const openProjectCardReducer = createSlice({
-  name: 'projectModal',
+const openMemberCardReducer = createSlice({
+  name: 'memberModal',
   initialState,
   reducers: {
     active: (state) => {
@@ -18,6 +18,6 @@ const openProjectCardReducer = createSlice({
 });
 
 
-export const { active, desactivate } = openProjectCardReducer.actions;
+export const { active, desactivate } = openMemberCardReducer.actions;
 
-export default openProjectCardReducer.reducer;
+export default openMemberCardReducer.reducer;

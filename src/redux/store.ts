@@ -3,6 +3,9 @@ import openTaskCardReducer from './features/openTaskCardSlice';
 import taskListReducer from './features/taskListSlice';
 import projectListReducer from './features/projectListSlice';
 import openProjectCardReducer from './features/openProjectCardSlice';
+import memberListReducer from './features/memberListSlice';
+import openMemberCardReducer from './features/openMemberCardSlice';
+
 
 
 
@@ -13,7 +16,9 @@ export const store = configureStore({
     openTaskCardReducer,
     taskListReducer,
     projectListReducer,
-    openProjectCardReducer
+    openProjectCardReducer,
+    memberListReducer,
+    openMemberCardReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware()
 })
