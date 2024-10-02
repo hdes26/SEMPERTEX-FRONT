@@ -1,0 +1,11 @@
+.add-project{
+padding-top: 10px;
+}
+
+.add-project .label {
+    font-size: 15px;
+    color: gray;
+}
+.add-project .label:hover {
+    color: rgb(86, 85, 85);
+}

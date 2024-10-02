@@ -2,20 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 import Textarea from '@/components/atoms/Textarea/Textarea';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useAppDispatch } from '@/redux/hooks';
 import { desactivate } from '@/redux/features/openTaskCardSlice';
 import { addTask } from '@/redux/features/taskListSlice';
+import { taskService } from '@/services/taskService';
 
 interface AddTaskCardProps {
-    type: 'todo' | 'inprogress' | 'completed';
+    type: 'pendiente' | 'en_progreso' | 'completada';
+    projectId: string;
 }
 export const AddTaskCard = (props: AddTaskCardProps) => {
-    const tasksFromStore = useAppSelector((state) => state.taskListReducer.tasks);
 
     const dispatch = useAppDispatch()
 
-    const handleAddTask = (value: string) => {
-        dispatch(addTask({ id: tasksFromStore.length + 1, name: value, status: props.type }))
+    const handleAddTask = async (value: string) => {        
+        const createTask = await taskService.createTask({ name: value, status: props.type, deadline: new Date(), projectId: props.projectId });
+        dispatch(addTask(createTask))
         dispatch(desactivate());
     };
     return (
@@ -29,7 +31,8 @@ export const AddTaskCard = (props: AddTaskCardProps) => {
     );
 };
 AddTaskCard.propTypes = {
-    type: PropTypes.oneOf(['todo', 'inprogress', 'completed']).isRequired,
+    type: PropTypes.oneOf(['pendiente', 'en_progreso', 'completada']).isRequired,
+    projectId: PropTypes.string.isRequired
 };
 
 export default AddTaskCard;

@@ -1,4 +1,4 @@
-.task-list.todo {
+.task-list.pendiente {
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -14,7 +14,7 @@
     background-color: hsl(0, 0%, 83%);
     border-radius: 10px;
 }
-.task-list.inprogress {
+.task-list.en_progreso {
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -31,7 +31,7 @@
     border-radius: 10px;
 }
 
-.task-list.completed {
+.task-list.completada {
     display: flex;
     flex-direction: column;
     width: 25%;

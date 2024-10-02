@@ -1,0 +1,11 @@
+.main-content{
+
+}
+.main-content button {
+    padding: 10px;
+    align-self: flex-end;
+}
+
+.main-content button:hover {
+    font-weight: 500;
+}

@@ -9,13 +9,13 @@ import align from '@/assets/align.png';
 interface TaskCardProps {
     id: string | number;
     name: string;
-    status: 'todo' | 'inprogress' | 'completed';
+    status: 'pendiente' | 'en_progreso' | 'completada';
 }
 export const TaskCard = (props: TaskCardProps) => {
     const labelColors = {
-        todo: "#59ff00",
-        inprogress: "#ec8b15",
-        completed: "#f01111",
+        pendiente: "#59ff00",
+        en_progreso: "#ec8b15",
+        completada: "#f01111",
     };
 
     const labelColor = props.status ? labelColors[props.status] : "#FFFFFF";
@@ -34,6 +34,6 @@ TaskCard.propTypes = {
         PropTypes.number,
     ]).isRequired,
     name: PropTypes.string.isRequired,
-    status: PropTypes.oneOf(['todo', 'inprogress', 'completed']).isRequired,
+    status: PropTypes.oneOf(['pendiente', 'en_progreso', 'completada']).isRequired,
 };
 export default TaskCard;

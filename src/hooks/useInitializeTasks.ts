@@ -1,19 +1,29 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { addMultipleTasks } from '@/redux/features/taskListSlice';
-import { TaskType } from '@/types/Task';
+import { addMultipleTasks, removeAllTasks } from '@/redux/features/taskListSlice';
+import { taskService } from "@/services/taskService";
 
-const useInitializeTasks = (initialTasks: TaskType[]) => {
+const useInitializeTasks = (projectId: string) => {
     const tasksFromStore = useAppSelector((state) => state.taskListReducer.tasks);
     const dispatch = useAppDispatch();
-    const hasDispatched = useRef(false);
+    const hasInitialized = useRef(false);
 
     useEffect(() => {
-        if (tasksFromStore.length === 0 && !hasDispatched.current) {
-            dispatch(addMultipleTasks(initialTasks));
-            hasDispatched.current = true;
-        }
-    }, [dispatch, tasksFromStore.length, initialTasks]);
+        const initializeTasks = async () => {
+            if (!hasInitialized.current) { 
+                try {
+                    hasInitialized.current = true;
+                    dispatch(removeAllTasks());
+                    const fetchedTasks = await taskService.getTasks(projectId);
+                    dispatch(addMultipleTasks(fetchedTasks));
+                } catch (error) {
+                    console.error('Error fetching tasks:', error);
+                }
+            }
+        };
+
+        initializeTasks();
+    }, [projectId]);
 
     return tasksFromStore;
 };

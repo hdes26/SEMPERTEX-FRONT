@@ -1,11 +1,7 @@
-import ProjectList from "@/components/organism/ProjectList/ProjectList";
+import Home from "@/components/template/Home/Home";
 
 export default function HomePage() {
     return (
-        <>
-            <section className="main-content flex w-full h-full">
-                <ProjectList />
-            </section>
-        </>
+       <Home />
     )
 }
