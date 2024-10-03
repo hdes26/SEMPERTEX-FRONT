@@ -1,0 +1,19 @@
+.assign-member-btn {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 8px;
+    font-weight: 450;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.assign-member-btn span {
+    font-size: 14px;
+}
+.assign-member-btn span:hover {
+    color: grey;
+}

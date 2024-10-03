@@ -5,6 +5,10 @@ import projectListReducer from './features/projectListSlice';
 import openProjectCardReducer from './features/openProjectCardSlice';
 import memberListReducer from './features/memberListSlice';
 import openMemberCardReducer from './features/openMemberCardSlice';
+import openUpdateCardModalReducer from './features/openUpdateTaskModalSlice';
+import showMembersToAssignReducer from './features/showMembersToAssignSlice';
+
+
 
 
 
@@ -18,7 +22,9 @@ export const store = configureStore({
     projectListReducer,
     openProjectCardReducer,
     memberListReducer,
-    openMemberCardReducer
+    openMemberCardReducer,
+    openUpdateCardModalReducer,
+    showMembersToAssignReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware()
 })

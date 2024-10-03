@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 import Label from '@/components/atoms/Label/Label';
-import Link from 'next/link';
 
 
 interface MemberCardProps {
@@ -11,13 +10,9 @@ interface MemberCardProps {
 }
 export const MemberCard = (props: MemberCardProps) => {
     return (
-        <Link className='member-card' href={`member/${props.id}`}>
-            <div>
-                <Label text={props.name}/>
-            </div>
-        </Link>
-
-
+        <div className='member-card'>
+            <Label text={props.name} />
+        </div>
     );
 };
 

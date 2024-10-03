@@ -1,5 +1,5 @@
 export type TaskType = {
-    id: number;
+    id: string;
     name: string;
     status: 'pendiente' | 'en_progreso' | 'completada';
     deadline?: Date;

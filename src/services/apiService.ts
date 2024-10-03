@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:14001';
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 
-const username = 'sempertex';
-const password = 'sempertex';
+const username = process.env.NEXT_PUBLIC_API_URL_USER;
+const password = process.env.NEXT_PUBLIC_API_URL_PASSWORD; 
 
 const basicAuth = Buffer.from(`${username}:${password}`).toString('base64');
 

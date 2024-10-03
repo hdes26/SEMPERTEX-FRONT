@@ -11,13 +11,13 @@ const openProjectCardReducer = createSlice({
     active: (state) => {
       state.active = true;
     },
-    desactivate: (state) => {
+    deactivate: (state) => {
       state.active = false;
     },
   },
 });
 
 
-export const { active, desactivate } = openProjectCardReducer.actions;
+export const { active, deactivate } = openProjectCardReducer.actions;
 
 export default openProjectCardReducer.reducer;

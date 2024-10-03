@@ -19,15 +19,12 @@ const openTaskCardReducer = createSlice({
         addMultipleTasks: (state, action: PayloadAction<TaskType[]>) => {            
             state.tasks.push(...action.payload)
         },
-        removeTask: (state, action: PayloadAction<number>) => {
-            state.tasks = state.tasks.filter(task => task.id !== action.payload);
-        },
         removeAllTasks: (state) => {
             state.tasks = [];
         },
     },
 });
 
-export const { addTask, addMultipleTasks, removeTask, removeAllTasks } = openTaskCardReducer.actions;
+export const { addTask, addMultipleTasks, removeAllTasks } = openTaskCardReducer.actions;
 
 export default openTaskCardReducer.reducer;

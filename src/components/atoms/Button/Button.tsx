@@ -3,10 +3,11 @@ import './style.css';
 
 interface ButtonProps {
     text: string;
+    onClick?: () => void;
 }
-export const Button = (props: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     return (
-        <button className="button">{props.text}</button>
+        <button className="button" onClick={props.onClick}>{props.text}</button>
     );
 };
 

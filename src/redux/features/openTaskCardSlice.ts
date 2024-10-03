@@ -14,7 +14,7 @@ const openTaskCardReducer = createSlice({
       state.active = true;
       state.listType = action.payload;
     },
-    desactivate: (state) => {
+    deactivate: (state) => {
       state.active = false;
       state.listType = '';
     },
@@ -22,6 +22,6 @@ const openTaskCardReducer = createSlice({
 });
 
 
-export const { active, desactivate } = openTaskCardReducer.actions;
+export const { active, deactivate } = openTaskCardReducer.actions;
 
 export default openTaskCardReducer.reducer;

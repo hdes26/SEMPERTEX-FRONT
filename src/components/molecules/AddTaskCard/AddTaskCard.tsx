@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './style.css';
 import Textarea from '@/components/atoms/Textarea/Textarea';
 import { useAppDispatch } from '@/redux/hooks';
-import { desactivate } from '@/redux/features/openTaskCardSlice';
+import { deactivate } from '@/redux/features/openTaskCardSlice';
 import { addTask } from '@/redux/features/taskListSlice';
 import { taskService } from '@/services/taskService';
 
@@ -18,7 +18,7 @@ export const AddTaskCard = (props: AddTaskCardProps) => {
     const handleAddTask = async (value: string) => {        
         const createTask = await taskService.createTask({ name: value, status: props.type, deadline: new Date(), projectId: props.projectId });
         dispatch(addTask(createTask))
-        dispatch(desactivate());
+        dispatch(deactivate());
     };
     return (
         <div className='add-task-card'>

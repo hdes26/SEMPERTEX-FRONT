@@ -1,18 +1,21 @@
 .member-card {
-    flex: 1 1 15%; 
+    display: flex;
     min-width: 23%;
     max-width: 23%;
-    height: 9rem;
-    background-color: rgb(0, 121, 191);
+    height: 5rem;
+    background-color: rgb(6, 112, 47);
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .member-card .label{
     color: white;
+    height: min-content;
 }
 
 .member-card:hover {

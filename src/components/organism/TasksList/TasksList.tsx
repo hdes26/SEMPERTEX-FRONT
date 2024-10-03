@@ -1,8 +1,6 @@
-'use client'
 import React from 'react';
 import './style.css';
 import TaskList from '@/components/molecules/TaskList/TaskList';
-import useInitializeTasks from '@/hooks/useInitializeTasks';
 
 type ProjectProps = {
     id: string;
@@ -10,7 +8,6 @@ type ProjectProps = {
 
 export const TasksList = ({ id }: ProjectProps) => {
 
-    useInitializeTasks(id);
     return (
         <>
             <TaskList name="Pendiente" type="pendiente" key={1} projectId={id} />

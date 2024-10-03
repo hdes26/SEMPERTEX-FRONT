@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import Textarea from '@/components/atoms/Textarea/Textarea';
 import { useAppDispatch } from '@/redux/hooks';
-import { desactivate } from '@/redux/features/openProjectCardSlice';
+import { deactivate } from '@/redux/features/openProjectCardSlice';
 import { projectService } from '@/services/projectService';
 import { addProject } from '@/redux/features/projectListSlice';
 
@@ -14,7 +14,7 @@ export const AddProjectCard = () => {
     const handleAddTask = async (value: string) => {
         const createProject = await projectService.createProject({ name: value });
         dispatch(addProject(createProject))
-        dispatch(desactivate());
+        dispatch(deactivate());
     };
     return (
         <div className='add-project-card'>

@@ -15,7 +15,6 @@ const useInitializeMembers = () => {
             try {
                 hasInitialized.current = true;
                 const fetchedMembers = await memberService.getMembers();
-                console.log(fetchedMembers);
                 
                 dispatch(addMultipleMembers(fetchedMembers));
             } catch (error) {

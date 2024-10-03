@@ -6,13 +6,17 @@ interface TextareaProps {
     placeholder: string;
     text?: string;
     onEnter?: (value: string) => void;
+    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void; // Asegúrate de que onChange esté aquí
 }
 
-export const Textarea: React.FC<TextareaProps> = ({ placeholder, text = '', onEnter }) => {
+export const Textarea: React.FC<TextareaProps> = ({ placeholder, text = '', onEnter, onChange }) => {
     const [inputValue, setInputValue] = useState<string>(text);
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setInputValue(event.target.value);
+        if (onChange) {
+            onChange(event); // Llama a onChange si está definido
+        }
     };
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -38,6 +42,8 @@ export const Textarea: React.FC<TextareaProps> = ({ placeholder, text = '', onEn
 Textarea.propTypes = {
     placeholder: PropTypes.string.isRequired,
     text: PropTypes.string,
+    onEnter: PropTypes.func,
+    onChange: PropTypes.func, // Agrega onChange a las PropTypes
 };
 
 export default Textarea;
